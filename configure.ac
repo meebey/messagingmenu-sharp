@@ -11,7 +11,7 @@ ASSEMBLY_COPYRIGHT="2012 Andreia Gaita"
 ASSEMBLY_DESCRIPTION="MessagingMenu-1.0 bindings for Mono"
 ASSEMBLY_NAME="messagingmenu-sharp"
 ASSEMBLY_NAMESPACE="MessagingMenu"
-ASSEMBLY_PC="messagingmenu-sharp-1.0"
+ASSEMBLY_PC="messagingmenu-sharp"
 ASSEMBLY_SHORTNAME="messagingmenu"
 ASSEMBLY_TITLE="MessagingMenu"
 ASSEMBLY_VERSION="12.10.3"
@@ -158,7 +158,7 @@ AC_SUBST(messagingmenu_prefix)
 AC_CONFIG_FILES([
 	Makefile
 	AssemblyInfo.cs
-	messagingmenu-sharp-1.0.pc
+	messagingmenu-sharp.pc
 ])
 AC_CONFIG_COMMANDS([default],[[ echo timestamp > stamp-h ]],[[]])
 AC_OUTPUT
