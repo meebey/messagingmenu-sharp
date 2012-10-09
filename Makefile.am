@@ -24,7 +24,7 @@ noinst_DATA = $(ASSEMBLY_NAME).dll
 EXTRA_DIST = $(RAW_API) $(sources) $(customs) $(METADATA) \
 	AssemblyInfo.cs.in \
 	$(ASSEMBLY_NAME).snk \
-	$(ASSEMBLY_NAME).dll.config.in \
+	$(ASSEMBLY_NAME).dll.config \
 	$(ASSEMBLY_NAME).pc.in \
 	$(ASSEMBLY_NAME)-sources.xml
 
