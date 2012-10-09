@@ -8,7 +8,7 @@ endif
 RAW_API=$(ASSEMBLY_NAME)-api.raw
 API=$(ASSEMBLY_NAME)-api.xml
 METADATA=$(ASSEMBLY_NAME).metadata
-
+KEYFILE=$(top_srcdir)/$(ASSEMBLY_NAME).snk
 sources = 
 
 build_sources = AssemblyInfo.cs $(sources)
@@ -42,7 +42,7 @@ generated-stamp: $(API)
 	 	--assembly-name=$(ASSEMBLY_NAME) && touch generated-stamp
 
 $(ASSEMBLY_NAME).dll: $(build_sources) generated-stamp
-	$(CSC) -nowarn:169 -unsafe -target:library \
+	$(CSC) -nowarn:169 -unsafe -target:library -keyfile:$(KEYFILE) \
 		$(GTK_SHARP_LIBS) \
 		$(GIO_SHARP_LIBS) \
 		$(build_sources)  generated/*.cs -out:$(ASSEMBLY_NAME).dll

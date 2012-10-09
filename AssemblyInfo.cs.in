@@ -8,4 +8,4 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyCopyright("@ASSEMBLY_COPYRIGHT@")]
 [assembly: AssemblyVersion("@ASSEMBLY_VERSION@")]
 [assembly: AssemblyDelaySign(false)]
-[assembly: AssemblyKeyFile("@ASSEMBLY_NAME@.snk")]
+[assembly: AssemblyKeyFile("")]
