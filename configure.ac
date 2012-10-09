@@ -63,6 +63,20 @@ if test "x$GACUTIL" = "xno" ; then
 fi
 
 GACUTIL_FLAGS="/package $ASSEMBLY_NAME /root "'$(DESTDIR)$(prefix)/lib'
+
+AC_ARG_ENABLE(pkg-config,
+	AC_HELP_STRING([--disable-pkg-config],
+		[Disable pkg-config install [default=NO]]),
+	disable_pkg_config=yes, disable_pkg_config=no
+)
+AM_CONDITIONAL([INSTALL_PKG_CONFIG], test x$disable_pkg_config = xno)
+
+AC_ARG_ENABLE(pkg-gac,
+	AC_HELP_STRING([--disable-pkg-gac],
+		[Disable GAC install [default=NO]]),
+	disable_pkg_gac=yes, disable_pkg_gac=no
+)
+AM_CONDITIONAL([INSTALL_PKG_GAC], test x$disable_pkg_gac = xno)
                                      
 AC_SUBST(RUNTIME)
 AC_SUBST(CSC)

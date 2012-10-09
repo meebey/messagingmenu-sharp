@@ -1,5 +1,9 @@
+# automake magic variables
+if INSTALL_PKG_CONFIG
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = $(ASSEMBLY_PC).pc
+endif
+# end of magic
 
 RAW_API=$(ASSEMBLY_NAME)-api.raw
 API=$(ASSEMBLY_NAME)-api.xml
@@ -44,6 +48,7 @@ $(ASSEMBLY_NAME).dll: $(build_sources) generated-stamp
 		$(GIO_SHARP_LIBS) \
 		$(build_sources)  generated/*.cs -out:$(ASSEMBLY_NAME).dll
 
+if INSTALL_PKG_GAC
 install-data-local:
 	echo "$(GACUTIL) /i $(ASSEMBLY_NAME).dll /f $(GACUTIL_FLAGS)";  \
         $(GACUTIL) /i $(ASSEMBLY_NAME).dll /f $(GACUTIL_FLAGS) || exit 1;
@@ -51,3 +56,4 @@ install-data-local:
 uninstall-local:
 	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) $(GACUTIL_FLAGS)"; \
         $(GACUTIL) /u $(ASSEMBLY_NAME) $(GACUTIL_FLAGS) || exit 1;
+endif
