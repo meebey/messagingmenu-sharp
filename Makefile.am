@@ -25,8 +25,7 @@ EXTRA_DIST = $(RAW_API) $(sources) $(customs) $(METADATA) \
 	AssemblyInfo.cs.in \
 	$(ASSEMBLY_NAME).snk \
 	$(ASSEMBLY_NAME).dll.config \
-	$(ASSEMBLY_NAME).pc.in \
-	$(ASSEMBLY_NAME)-sources.xml
+	$(ASSEMBLY_NAME).pc.in
 
 all: generated-stamp $(ASSEMBLY)
 
