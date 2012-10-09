@@ -1,4 +1,4 @@
-AC_INIT([messagingmenu-sharp], [12.10.3])
+AC_INIT([messagingmenu-sharp], [1.0])
 AC_CONFIG_SRCDIR([README])
 AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE
