@@ -7,7 +7,7 @@ AC_PROG_INSTALL
 
 dnl Package settings
 ASSEMBLY_COMPANY=""
-ASSEMBLY_COPYRIGHT="2012 Andreia Gaita"
+ASSEMBLY_COPYRIGHT="2012 (C) Mirco Bauer <meebey@meebey.net>"
 ASSEMBLY_DESCRIPTION="MessagingMenu-1.0 bindings for Mono"
 ASSEMBLY_NAME="messagingmenu-sharp"
 ASSEMBLY_NAMESPACE="MessagingMenu"
