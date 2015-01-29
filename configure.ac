@@ -103,7 +103,7 @@ if test "x$GAPI_PARSER" = "xno"; then
 	AC_MSG_CHECKING(for gapi2-parser.exe)
 	GAPI_PARSER=`which gapi2-parser.exe 2> /dev/null`
 	if test "x$GAPI_PARSER" = "xno" ; then
-		AC_MSG_ERROR(['gapi2_parser'/'gapi2-parser.exe' not found.])
+		AC_MSG_ERROR(['gapi2-parser'/'gapi2-parser.exe' not found.])
 	fi
 	AC_MSG_RESULT($GAPI_PARSER)
 	GAPI_PARSER="$MONO $GAPI_PARSER"
@@ -115,7 +115,7 @@ if test "x$GAPI_FIXUP" = "xno"; then
 	AC_MSG_CHECKING(for gapi2-fixup.exe)
 	GAPI_FIXUP=`which gapi2-fixup.exe 2> /dev/null`
 	if test "x$GAPI_FIXUP" = "xno" ; then
-		AC_MSG_ERROR(['gapi2_fixup'/'gapi2-fixup.exe' not found.])
+		AC_MSG_ERROR(['gapi2-fixup'/'gapi2-fixup.exe' not found.])
 	fi
 	AC_MSG_RESULT($GAPI_FIXUP)
 	GAPI_FIXUP="$MONO $GAPI_FIXUP"
