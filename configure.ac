@@ -106,7 +106,7 @@ dnl Check for gapi
 AC_PATH_PROG(GAPI_PARSER, gapi2-parser, no)
 if test "x$GAPI_PARSER" = "xno"; then
 	AC_MSG_CHECKING(for gapi2-parser.exe)
-	GAPI_PARSER=`$WHICH gapi2-parser.exe 2> /dev/null`
+	GAPI_PARSER=`$WHICH gapi2-parser.exe`
 	if test "x$GAPI_PARSER" = "xno" ; then
 		AC_MSG_ERROR(['gapi2-parser'/'gapi2-parser.exe' not found.])
 	fi
@@ -118,7 +118,7 @@ AC_SUBST(GAPI_PARSER)
 AC_PATH_PROG(GAPI_FIXUP, gapi2-fixup, no)
 if test "x$GAPI_FIXUP" = "xno"; then
 	AC_MSG_CHECKING(for gapi2-fixup.exe)
-	GAPI_FIXUP=`$WHICH gapi2-fixup.exe 2> /dev/null`
+	GAPI_FIXUP=`$WHICH gapi2-fixup.exe`
 	if test "x$GAPI_FIXUP" = "xno" ; then
 		AC_MSG_ERROR(['gapi2-fixup'/'gapi2-fixup.exe' not found.])
 	fi
@@ -130,7 +130,7 @@ AC_SUBST(GAPI_FIXUP)
 AC_PATH_PROG(GAPI_CODEGEN, gapi2-codegen, no)
 if test "x$GAPI_CODEGEN" = "xno"; then
 	AC_MSG_CHECKING(for gapi2_codegen.exe)
-	GAPI_CODEGEN=`$WHICH gapi2_codegen.exe 2> /dev/null`
+	GAPI_CODEGEN=`$WHICH gapi2_codegen.exe`
 	if test "x$GAPI_CODEGEN" = "xno" ; then
 		AC_MSG_ERROR(['gapi2-codegen'/'gapi2_codegen.exe' not found.])
 	fi
