@@ -33,11 +33,6 @@ if test "x$PKG_CONFIG" = "xno"; then
 	AC_MSG_ERROR(['pkg-config' is not in your PATH.])
 fi
 
-AC_PATH_PROG(WHICH, which, no)
-if test "x$WHICH" = "xno"; then
-	AC_MSG_ERROR(['which' is not in your PATH.])
-fi
-
 dnl Check for Mono
 PKG_CHECK_MODULES(MONO_DEPENDENCY, mono >= 1.0, has_mono=true, has_mono=false)
 
@@ -105,37 +100,19 @@ AC_SUBST(GIO_SHARP_LIBS)
 dnl Check for gapi
 AC_PATH_PROG(GAPI_PARSER, gapi2-parser, no)
 if test "x$GAPI_PARSER" = "xno"; then
-	AC_MSG_CHECKING(for gapi2-parser.exe)
-	GAPI_PARSER=`$WHICH gapi2-parser.exe`
-	if test "x$GAPI_PARSER" = "x" ; then
-		AC_MSG_ERROR(['gapi2-parser'/'gapi2-parser.exe' not found.])
-	fi
-	AC_MSG_RESULT($GAPI_PARSER)
-	GAPI_PARSER="$MONO $GAPI_PARSER"
+	AC_MSG_ERROR(['gapi2-parser' (script for gapi2-parser.exe) not found.])
 fi
 AC_SUBST(GAPI_PARSER)
 
 AC_PATH_PROG(GAPI_FIXUP, gapi2-fixup, no)
 if test "x$GAPI_FIXUP" = "xno"; then
-	AC_MSG_CHECKING(for gapi2-fixup.exe)
-	GAPI_FIXUP=`$WHICH gapi2-fixup.exe`
-	if test "x$GAPI_FIXUP" = "x" ; then
-		AC_MSG_ERROR(['gapi2-fixup'/'gapi2-fixup.exe' not found.])
-	fi
-	AC_MSG_RESULT($GAPI_FIXUP)
-	GAPI_FIXUP="$MONO $GAPI_FIXUP"
+	AC_MSG_ERROR(['gapi2-fixup' (script for gapi2-fixup.exe) not found.])
 fi
 AC_SUBST(GAPI_FIXUP)
 
 AC_PATH_PROG(GAPI_CODEGEN, gapi2-codegen, no)
 if test "x$GAPI_CODEGEN" = "xno"; then
-	AC_MSG_CHECKING(for gapi2_codegen.exe)
-	GAPI_CODEGEN=`$WHICH gapi2_codegen.exe`
-	if test "x$GAPI_CODEGEN" = "x" ; then
-		AC_MSG_ERROR(['gapi2-codegen'/'gapi2_codegen.exe' not found.])
-	fi
-	AC_MSG_RESULT([$GAPI_CODEGEN])
-	GAPI_CODEGEN="$MONO $GAPI_CODEGEN"
+	AC_MSG_ERROR(['gapi2-codegen' (script for gapi2_codegen.exe) not found.])
 fi
 AC_SUBST(GAPI_CODEGEN)
 
