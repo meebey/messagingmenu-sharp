@@ -1,6 +1,6 @@
 # automake magic variables
 if INSTALL_PKG_CONFIG
-pkgconfigdir = $(libdir)/pkgconfig
+pkgconfigdir = $(datadir)/pkgconfig
 pkgconfig_DATA = $(ASSEMBLY_PC).pc
 endif
 # end of magic
