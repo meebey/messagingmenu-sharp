@@ -27,11 +27,7 @@ AC_SUBST(ASSEMBLY_COMPANY)
 AC_SUBST(ASSEMBLY_COPYRIGHT)
 AC_SUBST(ASSEMBLY_PC)
 
-dnl Check for pkg-config
-AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
-if test "x$PKG_CONFIG" = "xno"; then
-	AC_MSG_ERROR(['pkg-config' is not in your PATH.])
-fi
+PKG_PROG_PKG_CONFIG
 
 AC_PATH_PROG(WHICH, which, no)
 if test "x$WHICH" = "xno"; then
@@ -94,7 +90,7 @@ dnl Check for gtk-sharp
 PKG_CHECK_MODULES(GTK_SHARP, gtk-sharp-2.0)
 AC_SUBST(GTK_SHARP_CFLAGS)
 AC_SUBST(GTK_SHARP_LIBS)
-gtksharp_prefix=`pkg-config --variable=prefix gtk-sharp-2.0`
+gtksharp_prefix=`$PKG_CONFIG --variable=prefix gtk-sharp-2.0`
 AC_SUBST(gtksharp_prefix)
 
 dnl Check for gio-sharp
@@ -147,7 +143,7 @@ if test "x$MONODOCER" = "xno" -o "x$MDASSEMBLER" = "xno"; then
 	doc_sources_dir=
 else
 	enable_monodoc=yes
-	doc_sources_dir="`pkg-config --variable=sourcesdir monodoc`"
+	doc_sources_dir="`$PKG_CONFIG --variable=sourcesdir monodoc`"
 fi
 AC_SUBST(MDASSEMBLER)
 AC_SUBST(MONODOCER)
